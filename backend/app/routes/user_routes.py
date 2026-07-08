@@ -3,7 +3,12 @@ from sqlalchemy.orm import Session
 
 from app.database.connection import get_database
 from app.schemas.user_schema import UserCreate, UserResponse
-from app.services.user_service import create_user, get_users
+from app.services.user_service import (
+    create_user,
+    get_users,
+    update_user,
+    delete_user
+)
 
 
 router = APIRouter(
@@ -34,3 +39,33 @@ def list_users(
 ):
 
     return get_users(db)
+
+@router.put(
+    "/{user_id}",
+    response_model=UserResponse
+)
+def update(
+    user_id: int,
+    user: UserCreate,
+    db: Session = Depends(get_database)
+):
+
+    return update_user(
+        db,
+        user_id,
+        user
+    )
+
+
+@router.delete(
+    "/{user_id}"
+)
+def delete(
+    user_id: int,
+    db: Session = Depends(get_database)
+):
+
+    return delete_user(
+        db,
+        user_id
+    )
