@@ -1,4 +1,4 @@
-# Smart Office 🚀
+# Smart Office 
 
 Sistema de gestão empresarial inteligente desenvolvido com Python, FastAPI, PostgreSQL e Inteligência Artificial.
 
@@ -32,4 +32,4 @@ O Smart Office tem como objetivo centralizar processos empresariais, oferecendo:
 
 ## Status
 
-🚧 Em desenvolvimento
+Em desenvolvimento

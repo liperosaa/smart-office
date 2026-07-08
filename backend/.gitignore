@@ -1,0 +1,14 @@
+# Virtual environments
+.venv/
+teste_env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Test coverage
+htmlcov/
+.coverage
+
+# Environment variables
+.env
