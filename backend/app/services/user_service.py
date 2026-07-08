@@ -87,3 +87,8 @@ def delete_user(
     return {
         "message": "Usuário removido com sucesso"
     }
+
+def test_list_users(client):
+    response = client.get("/users/")
+
+    assert response.status_code == 200

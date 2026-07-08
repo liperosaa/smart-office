@@ -1,14 +1,26 @@
 from pydantic import BaseModel
 
 
-class DailyReportResponse(BaseModel):
-    data: str
+class GeneralReportResponse(BaseModel):
+    total_usuarios: int
+    total_salas: int
+    total_equipamentos: int
     consumo_total: float
-    equipamentos_monitorados: int
+
+
+
+class EquipmentReportResponse(BaseModel):
+    equipamento: str
+    consumo_total: float
+
+
+
+class RoomReportResponse(BaseModel):
+    sala: str
+    consumo_total: float
 
 
 
 class MonthlyReportResponse(BaseModel):
     mes: str
     consumo_total: float
-    media_diaria: float
