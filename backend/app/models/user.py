@@ -5,7 +5,6 @@ from app.database.base import Base
 
 
 class User(Base):
-
     __tablename__ = "users"
 
     id = Column(
@@ -25,7 +24,7 @@ class User(Base):
         nullable=False
     )
 
-    senha = Column(
+    senha_hash = Column(
         String(255),
         nullable=False
     )
@@ -37,10 +36,12 @@ class User(Base):
 
     ativo = Column(
         Boolean,
-        default=True
+        default=True,
+        nullable=False
     )
 
     criado_em = Column(
-        DateTime,
-        server_default=func.now()
+        DateTime(timezone=True),
+        server_default=func.now(),
+        nullable=False
     )

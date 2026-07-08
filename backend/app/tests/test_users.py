@@ -17,3 +17,4 @@ def test_create_user(client):
 
     assert data["nome"] == "Teste Usuario"
     assert data["email"] == "teste_usuario_001@email.com"
+    
